@@ -39,8 +39,8 @@ class Logistic_Regression():
     self.b=self.b-self.learning_rate*db
 
 
-  def predict(self):
-    Y_pre=1/(1+np.exp(-1*(self.X.dot(self.w) + self.b)))
+  def predict(self,X):
+    Y_pre=1/(1+np.exp(-1*(X.dot(self.w) + self.b)))
     Y_predict=np.where(Y_pre>0.5,1,0)
     return Y_predict
 
